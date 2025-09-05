@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gil and Gil Corp — SMS Consent</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; color: #0f172a; background:#f8fafc; }
+    .wrap { max-width: 760px; margin: 40px auto; background:#fff; padding: 28px; border-radius: 16px; box-shadow: 0 10px 30px rgba(2,6,23,.06); }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    p.lead { margin: 0 0 20px; color:#334155; }
+    form { display: grid; gap: 14px; }
+    label.small { font-size: 14px; color:#334155; }
+    input[type="text"], input[type="tel"], input[type="email"] { width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 16px; }
+    button { appearance: none; border: 0; background:#111827; color:#fff; padding: 12px 18px; border-radius: 10px; font-size: 16px; cursor: pointer; }
+    .consent { display:flex; gap:.6rem; align-items:flex-start; line-height:1.35; font-size:14px; background:#f1f5f9; border:1px solid #e2e8f0; padding:12px; border-radius:12px; }
+    footer { margin-top: 18px; font-size: 13px; color:#64748b; }
+    .muted { color:#64748b; font-size:13px }
+    .lang { margin-top:6px; font-size:14px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Get Property Updates & Appointment Reminders</h1>
+    <p class="lead">Sign up to receive SMS from <strong>Gil and Gil Corp</strong>. You can opt out anytime.</p>
+
+    <form action="#" method="post" onsubmit="alert('Thanks! If this were live, you would receive a confirmation text.'); return false;">
+      <div>
+        <label class="small" for="name">Full Name</label>
+        <input id="name" name="name" type="text" placeholder="Jane Doe" required />
+      </div>
+      <div>
+        <label class="small" for="phone">Mobile Number</label>
+        <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" required />
+      </div>
+      <div>
+        <label class="small" for="email">Email (optional)</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" />
+      </div>
+
+      <label class="consent">
+        <input type="checkbox" id="sms-consent" required />
+        <span>
+          By checking this box, I agree to receive <strong>recurring</strong> text messages from <strong>Gil and Gil Corp</strong> about real-estate services (e.g., property updates and appointment reminders) at the number I provide. <strong>Message frequency varies. Msg &amp; data rates may apply. Reply HELP for help, STOP to cancel.</strong> Consent isn’t required to buy or sell a property. See our <a href="./terms.html" target="_blank">Terms</a> and <a href="./privacy.html" target="_blank">Privacy Policy</a>.
+          <div class="lang">
+            <em>Español:</em> Al marcar esta casilla, acepto recibir <strong>mensajes de texto recurrentes</strong> de <strong>Gil and Gil Corp</strong> sobre servicios inmobiliarios (p. ej., alertas de propiedades y recordatorios de citas) al número que proporciono. <strong>La frecuencia de mensajes varía. Se pueden aplicar cargos de mensajes y datos. Responda HELP para ayuda, STOP para cancelar.</strong> Su consentimiento no es condición para comprar o vender una propiedad. Vea nuestros <a href="./terms.html" target="_blank">Términos</a> y <a href="./privacy.html" target="_blank">Política de Privacidad</a>.
+          </div>
+        </span>
+      </label>
+
+      <button type="submit">Sign Up</button>
+      <div class="muted">You’ll receive a confirmation text after signing up.</div>
+    </form>
+
+    <footer>
+      © <span id="year"></span> Gil and Gil Corp • Licensed Realtor® — Brokered by eXp Realty (disclosure only; SMS sender is Gil and Gil Corp)
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+</body>
+</html>
